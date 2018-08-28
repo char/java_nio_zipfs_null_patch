@@ -76,6 +76,17 @@ public class NioZipFSNullPatch {
                 for (int i = 0; i < method.instructions.size(); i++) {
                     AbstractInsnNode instruction = method.instructions.get(i);
 
+                    // We ignore 6 backward and 2 forward from the LDC instruction:
+                    // new InvalidPathException | -6
+                    // dup                      | -5
+                    // aload 0                  | -4
+                    // getfield ZipPath.zfs     | -3
+                    // aload 1                  | -2
+                    // invokevirtual getString  | -1
+                    // ldc "Path: nul char..."  | <--
+                    // invokespecial <init>     | 1
+                    // athrow                   | 2
+
                     if (i >= constantIndex - 6 && i <= constantIndex + 2) {
                         instruction = new InsnNode(NOP);
                     }
