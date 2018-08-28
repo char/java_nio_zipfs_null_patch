@@ -12,7 +12,7 @@ import java.nio.file.*;
 import java.util.Arrays;
 import java.util.ListIterator;
 import java.util.Optional;
-import java.util.zip.:ZipEntry;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static org.objectweb.asm.ClassReader.EXPAND_FRAMES;
