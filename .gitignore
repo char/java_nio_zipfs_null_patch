@@ -1,0 +1,8 @@
+/.idea/
+/.gradle/
+/out/
+/build/
+
+*.iml
+
+/zipfile.patched.jar

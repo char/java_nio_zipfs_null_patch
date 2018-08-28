@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'codes.som.anthony'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.ow2.asm:asm-debug-all:6.0_BETA"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
